@@ -28,4 +28,4 @@ What does your program do?
 
 
 What data do you need?
-- A large database of restaurants in the Dublin area is desirable, with data initially being 
+- A large database of restaurants in the Dublin area.

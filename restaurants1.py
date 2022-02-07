@@ -65,6 +65,8 @@ cheese_board_restaurants,
 most_instagrammable_interiors_restaurants
 ]
 
+types_of_restaurants = []
+
 with open('spreadsheet.csv', newline = '') as spreadsheet:
     spreadsheet_reader = csv.DictReader(spreadsheet)
     for row in spreadsheet_reader:
@@ -81,7 +83,7 @@ with open('spreadsheet.csv', newline = '') as spreadsheet:
         burgers_and_bbq_restaurants.append(row['Burgers and BBQ'])
         steak_restaurants.append(row['Steak'])
         byob_restaurants.append(row['BYOB'])
-        dinner_restaurants.append(row['Misc. Dinner'])
+        dinner_restaurants.append(row['Misc. Dinner']) 
         lunch_and_salads_restaurants.append(row['Lunch and Salads'])
         sandwiches_restaurants.append(row['Sandwiches'])
         chicken_wings_restaurants.append(row['Chicken Wings'])
@@ -95,7 +97,7 @@ with open('spreadsheet.csv', newline = '') as spreadsheet:
         afternoon_tea_restaurants.append(row['Afternoon Tea'])
         lunch_with_mum_restaurants.append(row['Lunch with Mum'])
         old_man_pubs_restaurants.append(row['Old Man Pubs'])
-        cheese_board_restaurants.append(row['Cheese Boards'])
+        cheese_board_restaurants.append(row['Ch eese Boards'])
         most_instagrammable_interiors_restaurants.append(row['Most Instagrammable Interiors'])
 
 for restaurant_list in list_of_restaurant_lists:

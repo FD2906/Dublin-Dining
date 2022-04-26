@@ -29,3 +29,8 @@ What does your program do?
 
 What data do you need?
 - A large database of restaurants in the Dublin area.
+
+How is each restaurant's data stored?
+- In a list structure, consisting of:
+
+['name', 'phone number', 'website', 'address', 'cuisine type', 'aggregated rating', 'number of reviews', ]

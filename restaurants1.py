@@ -97,14 +97,20 @@ with open('spreadsheet.csv', newline = '') as spreadsheet:
         afternoon_tea_restaurants.append(row['Afternoon Tea'])
         lunch_with_mum_restaurants.append(row['Lunch with Mum'])
         old_man_pubs_restaurants.append(row['Old Man Pubs'])
-        cheese_board_restaurants.append(row['Ch eese Boards'])
+        cheese_board_restaurants.append(row['Cheese Boards'])
         most_instagrammable_interiors_restaurants.append(row['Most Instagrammable Interiors'])
 
 for restaurant_list in list_of_restaurant_lists:
     for restaurant in restaurant_list:
-        if restaurant == '':
-            break
-        print(restaurant)
+        #if restaurant == '':
+            #break
+        #print(restaurant)
+        pass
+
+for restaurant in japanese_and_sushi_restaurants:
+    if restaurant == '':
+        break
+    print(restaurant)
 
 
 

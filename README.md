@@ -33,4 +33,10 @@ What data do you need?
 How is each restaurant's data stored?
 - In a list structure, consisting of:
 
-['name', 'phone number', 'website', 'address', 'cuisine type', 'aggregated rating', 'number of reviews', ]
+["name", "cuisine type", "aggregated rating", "number of reviews", "price range", "website", "phone number", "address"]
+
+Notes: 
+
+- "cuisine type" may be a list of types of cuisines.
+- "aggregated rating" ranges from 0 to 5, with intervals of 0.5.
+- "price range" ranges from 1 to 4, depicting $, $$, $$$, and $$$$.

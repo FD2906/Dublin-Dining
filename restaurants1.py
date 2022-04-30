@@ -1,119 +1,12 @@
-import csv
+dtypes = ["irish", "seafood", "wine bars", "pubs", "gastro pubs", "bistros", "modern european", "sports bars", "steakhouses"]
 
-
-# csv file experiment code #
-tapas_restaurants = []
-pizza_restaurants = []
-italian_restaurants = []
-mexican_texmex_restaurants = []
-french_and_swiss_restaurants = []
-indian_pakistani_and_moroccan_restaurants = []
-chinese_and_korean_restaurants = []
-thai_vietnamese_and_indonesian_restaurants = []
-japanese_and_sushi_restaurants = []
-seafood_restaurants = []
-burgers_and_bbq_restaurants = []
-steak_restaurants = []
-byob_restaurants = []
-dinner_restaurants = []
-lunch_and_salads_restaurants = []
-sandwiches_restaurants = []
-chicken_wings_restaurants = []
-desserts_restaurants = []
-coffee_and_tea_restaurants = []
-vegan_and_vegetarian_restaurants = []
-fine_dining_restaurants = []
-cocktails_restaurants = []
-date_night_restaurants = []
-brunch_restaurants = []
-afternoon_tea_restaurants = []
-lunch_with_mum_restaurants = []
-old_man_pubs_restaurants = []
-cheese_board_restaurants = []
-most_instagrammable_interiors_restaurants = []
-
-
-list_of_restaurant_lists = [
-tapas_restaurants, 
-pizza_restaurants, 
-italian_restaurants, 
-french_and_swiss_restaurants, 
-mexican_texmex_restaurants, 
-indian_pakistani_and_moroccan_restaurants, 
-chinese_and_korean_restaurants, 
-thai_vietnamese_and_indonesian_restaurants, 
-japanese_and_sushi_restaurants, 
-seafood_restaurants, 
-burgers_and_bbq_restaurants, 
-steak_restaurants, 
-byob_restaurants, 
-dinner_restaurants, 
-lunch_and_salads_restaurants, 
-sandwiches_restaurants, 
-chicken_wings_restaurants, 
-desserts_restaurants, 
-coffee_and_tea_restaurants, 
-vegan_and_vegetarian_restaurants, 
-fine_dining_restaurants, 
-cocktails_restaurants, 
-date_night_restaurants, 
-brunch_restaurants, 
-afternoon_tea_restaurants, 
-lunch_with_mum_restaurants, 
-old_man_pubs_restaurants, 
-cheese_board_restaurants, 
-most_instagrammable_interiors_restaurants
-]
-
-types_of_restaurants = []
-
-with open('spreadsheet.csv', newline = '') as spreadsheet:
-    spreadsheet_reader = csv.DictReader(spreadsheet)
-    for row in spreadsheet_reader:
-        tapas_restaurants.append(row['Tapas'])
-        pizza_restaurants.append(row['Pizza'])
-        italian_restaurants.append(row['Italian'])
-        french_and_swiss_restaurants.append(row['French and Swiss'])
-        mexican_texmex_restaurants.append(row['Mexican / Tex Mex'])
-        indian_pakistani_and_moroccan_restaurants.append(row['Indian, Pakistani and Moroccan'])
-        chinese_and_korean_restaurants.append(row['Chinese and Korean'])
-        thai_vietnamese_and_indonesian_restaurants.append(row['Thai, Vietnamese and Indonesian'])
-        japanese_and_sushi_restaurants.append(row['Japanese and Sushi'])
-        seafood_restaurants.append(row['Seafood'])
-        burgers_and_bbq_restaurants.append(row['Burgers and BBQ'])
-        steak_restaurants.append(row['Steak'])
-        byob_restaurants.append(row['BYOB'])
-        dinner_restaurants.append(row['Misc. Dinner']) 
-        lunch_and_salads_restaurants.append(row['Lunch and Salads'])
-        sandwiches_restaurants.append(row['Sandwiches'])
-        chicken_wings_restaurants.append(row['Chicken Wings'])
-        desserts_restaurants.append(row['Sweet Treats'])
-        coffee_and_tea_restaurants.append(row['Coffee and Tea'])
-        vegan_and_vegetarian_restaurants.append(row['Vegan and Vegetarian'])
-        fine_dining_restaurants.append(row['Fine Dining'])
-        cocktails_restaurants.append(row['Cocktails and Wine Bars'])
-        date_night_restaurants.append(row['Date Nights'])
-        brunch_restaurants.append(row['Brunch'])
-        afternoon_tea_restaurants.append(row['Afternoon Tea'])
-        lunch_with_mum_restaurants.append(row['Lunch with Mum'])
-        old_man_pubs_restaurants.append(row['Old Man Pubs'])
-        cheese_board_restaurants.append(row['Cheese Boards'])
-        most_instagrammable_interiors_restaurants.append(row['Most Instagrammable Interiors'])
-
-for restaurant_list in list_of_restaurant_lists:
-    for restaurant in restaurant_list:
-        #if restaurant == '':
-            #break
-        #print(restaurant)
-        pass
-
-for restaurant in japanese_and_sushi_restaurants:
-    if restaurant == '':
-        break
-    print(restaurant)
-
-
-
-
+# data layout:     ["name", "cuisine type", "aggregated rating", "number of reviews", "price range", "website", "phone number", "address"],
+restaurant_data = [["The Boxty House", "irish", "4.5", "851", "2", "http://www.boxtyhouse.ie/", "(01) 677 2762", "20-21 Temple Bar Dublin 2"],
+                   ["The Old Mill Restaurant", ["seafood", "wine bars"], "4.5", "102", "2", "http://oldmillrestaurant.ie", "(01) 671 9266", "14 Temple Bar Square Dublin 2"],
+                   ["P Mac's", ["pubs", "gastro pubs"], "4.5", "176", "2", "N/A", "(01) 405 3653", "Stephen Street Lower Dublin, D02 XY61"],
+                   ["Darkey Kellys", ["pubs", "irish"], "4.5", "124", "2", "http://www.darkeykellys.ie", "(01) 679 6500", "Hotel Harding Copper Alley, Fishamble Street Dublin 8"],
+                   ["The Pig's Ear", ["bistros", "modern european"], "4.5", "218", "3", "http://www.thepigsear.ie", "(01) 670 3865", "4 Nassau Street Dublin 2"],
+                   ["Bull & Castle", ["pubs", "sports bars", "steakhouses"], "4", "243", "3", "https://www.thebuckleycollection.ie/bull-castle-steakhouse", "(01) 475 1122", "5-7 Lord Edward Street Christchurch, 8"],
+                   ]
 
 

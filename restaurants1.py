@@ -69,8 +69,14 @@ millstone_restaurant = Restaurant("Millstone Restaurant", ["modern european"], 4
 fallon_and_byrne = Restaurant("Fallon & Byrne", ["delis", "wine bars", "irish"], 4, 224, 3, "http://www.fallonandbyrne.com", "(01) 472 1000", "11-17 Exchequer Street Dublin 2")
 sole_seafood_and_grill = Restaurant("SOLE Seafood and Grill", ["seafood", "steakhouses"], 4, 22, 2, "https://www.sole.ie", "(01) 544 2300", "18-19 William Street S Dublin 2")
 
-full_list_of_restaurants = dir()[10:]
-print(full_list_of_restaurants)
-print(len(full_list_of_restaurants))
-
-# ['bar_italia_ristorante', 'brannigans', 'bull_and_castle', 'bunsen', 'cafe_en_seine', 'camden_kitchen', 'catch_22', 'copper_alley_bistro', 'cornucopia', 'darkey_kellys', 'dublin_pizza_company', 'eatokyo', 'elephant_and_castle', 'fallon_and_byrne', 'featherblade', 'fishshack_cafe', 'fx_buckley', 'hatch_and_sons', 'il_vicoletto', 'klaw', 'la_cucina_restaurant', 'la_maison', 'las_tapas_de_lola', 'leo_burdock', 'millstone_restaurant', 'murphys_bistro_cafe', 'oneills_bar_and_restaurant', 'p_macs', 'pichet', 'platform_61', 'queen_of_tarts', 'rustic_stone', 'san_lorenzos', 'shanahans_on_the_green', 'sheehans', 'sole_seafood_and_grill', 'taste_at_rustic', 'the_bakehouse', 'the_boxty_house', 'the_brazen_head', 'the_cedar_tree', 'the_green_hen', 'the_hungry_mexican', 'the_old_mill_restaurant', 'the_pigs_ear', 'the_port_house', 'the_quays_irish_restaurant', 'the_ramen_bar', 'the_winding_stair', 'the_woollen_mills', 'xian_street_food']
+full_list_of_restaurants = [bar_italia_ristorante, brannigans, bull_and_castle, bunsen, cafe_en_seine, 
+                            camden_kitchen, catch_22, copper_alley_bistro, cornucopia, darkey_kellys, 
+                            dublin_pizza_company, eatokyo, elephant_and_castle, fallon_and_byrne, featherblade, 
+                            fishshack_cafe, fx_buckley, hatch_and_sons, il_vicoletto, klaw, 
+                            la_cucina_restaurant, la_maison, las_tapas_de_lola, leo_burdock, millstone_restaurant, 
+                            murphys_bistro_cafe, oneills_bar_and_restaurant, p_macs, pichet, platform_61, 
+                            queen_of_tarts, rustic_stone, san_lorenzos, shanahans_on_the_green, sheehans, 
+                            sole_seafood_and_grill, taste_at_rustic, the_bakehouse, the_boxty_house, the_brazen_head, 
+                            the_cedar_tree, the_green_hen, the_hungry_mexican, the_old_mill_restaurant, the_pigs_ear, 
+                            the_port_house, the_quays_irish_restaurant, the_ramen_bar, the_winding_stair, the_woollen_mills, 
+                            xian_street_food]

@@ -36,7 +36,7 @@ sheehans = Restaurant("Sheehans", ["pubs", "irish", "irish pubs"], 4.5, 81, 2, "
 rustic_stone = Restaurant("Rustic Stone", ["american", "irish", "steakhouses"], 4, 189, 3, "http://www.rusticstone.ie", "(01) 707 9596", "17 S Great Georges Street Dublin 2")
 queen_of_tarts = Restaurant("Queen of Tarts", ["desserts", "tea rooms", "breakfast and brunch"], 4.5, 488, 2, "http://www.queenoftarts.ie", "(01) 670 7499", "Cork Hill Dame Street Dublin 2")
 platform_61 = Restaurant("Platform 61", ["tapas", "wine bars", "modern european"], 4.5, 30, 2, "http://www.platform61.ie/", "(01) 558 3932", "27 William Street South Dublin, D02 RP86")
-the_brazen_head = Restaurant("The Brazen Head", ["pubs, irish"], 4, 701, 2, "http://www.brazenhead.com", "(01) 679 5186", "20 Bridge Street Lower Dublin 8")
+the_brazen_head = Restaurant("The Brazen Head", ["pubs", "irish"], 4, 701, 2, "http://www.brazenhead.com", "(01) 679 5186", "20 Bridge Street Lower Dublin 8")
 bunsen = Restaurant("Bunsen", ["burgers"], 4.5, 177, 2, "http://bunsen.ie", "(01) 559 9532", "22 Essex Street E Temple Bar Dublin 2")
 elephant_and_castle = Restaurant("Elephant & Castle", ["american", "chicken wings", "breakfast and brunch"], 4, 324, 2, "https://elephantandcastle.ie", "(01) 679 3121", "18 Temple Bar Dublin 2")
 the_bakehouse = Restaurant("The Bakehouse", ["bakeries", "coffee and tea shops", "breakfast and brunch"], 4.5, 250, 1, "https://bakehousedublin.ie", "(01) 873 4279", "6 Bachelors Walk Dublin 1")
@@ -80,3 +80,4 @@ full_list_of_restaurants = [bar_italia_ristorante, brannigans, bull_and_castle, 
                             the_cedar_tree, the_green_hen, the_hungry_mexican, the_old_mill_restaurant, the_pigs_ear, 
                             the_port_house, the_quays_irish_restaurant, the_ramen_bar, the_winding_stair, the_woollen_mills, 
                             xian_street_food]
+

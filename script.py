@@ -1,43 +1,36 @@
 from restaurants1 import full_list_of_restaurants
+import re
 
-list_of_cuisines = []
+# create a full list of cuisines for the user to search through
+full_list_of_cuisines = []
 
 for restaurant in full_list_of_restaurants:
     for cuisine in restaurant.cuisine:
-        if cuisine not in list_of_cuisines:
-            list_of_cuisines.append(cuisine)
+        if cuisine not in full_list_of_cuisines:
+            full_list_of_cuisines.append(cuisine)
 
-def pattern_search(text, pattern):
-    text_lower = text.lower()
-    pattern_lower = pattern.lower()
-    print("Input Text:", text_lower, "Input Pattern:", pattern_lower)
-    for index in range(len(text_lower)):
-        print("Text Index:", index)
-        match_count = 0
-        for char in range(len(pattern_lower)):
-            print("Pattern Index:", char)
-            if pattern_lower[char] == text_lower[index+char]:
-                print("Matching index found")
-                print("Match Count: " + str(match_count))
-                match_count += 1
-            else:
-                break
-        if match_count == len(pattern_lower):
-            print(pattern_lower + " found at index " + str(index))
-            return True
+# leave blank to search all restaurants, enter letters to search for cuisines starting with the input
+user_search_input = input("Welcome to Dublin Dining!\nEnter below the beginning of your desired food type or leave it blank to search all restaurants.\n")  
 
-
-
-user_search_input = input('''
-Welcome to Dublin Dining!
-Enter below the beginning of your desired food type or leave it blank to search all restaurants.
-''')
-
+# search function using regex to search for cuisines beginning with the user's inputted letters.
 def search_function():
     search_results = []
-    for cuisine in list_of_cuisines:
-        if pattern_search(cuisine, user_search_input):
+    user_search_input_lower = user_search_input.lower()
+    for cuisine in full_list_of_cuisines:
+        cuisine_lower = cuisine.lower()
+        if re.findall('^{input}'.format(input = user_search_input_lower), cuisine_lower):
             search_results.append(cuisine)
     return search_results
 
-print(search_function()) 
+# search results should appear in a list []
+search_results = search_function()
+
+if user_search_input == '':
+    # user wants to search all restaurants
+    print("Searching all restaurants...")
+elif len(search_results) == 1:
+    # user narrowed down his preferences to one cuisine, thus display all restaurants within this cuisine
+    print("The only option with those beginning letters is {cuisine}. Do you want to look at results for {cuisine_title_case}?".format(cuisine = search_results[0], cuisine_title_case = (search_results[0]).title()))
+elif len(search_results) > 1:
+    # displaying the cuisines that start with the user's input, prompt user to search for one cuisine only or all cuisines.
+    print("With the beginning letters {input} your choices are {choices}".format(input = user_search_input, choices = search_results))

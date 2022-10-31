@@ -1,5 +1,5 @@
 from restaurants1 import full_list_of_restaurants # imports the full database of restaurants
-import re # imports the python regex library
+#import re # imports the python regex library
 import collections # imports the collections
 
 # some test code here to test the return_recommended_score method

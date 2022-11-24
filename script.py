@@ -63,7 +63,15 @@ def get_restaurant_results(user_input, search_cuisine_results):
         # user left the input blank, they want to search all restaurants
         print("Searching all restaurants in Dublin...")
         # COMPLETE THIS LATER: write another function to display results: all restaurants
-
+        for restaurant in full_list_of_restaurants:
+            print("\n_____________________\n")
+            print("Name:", restaurant.name)
+            print("Rating:", str(restaurant.rating) + "/5 (Of {a} reviews)".format(a = restaurant.review_count))
+            print("Price Range:", "{b}".format(b = "$"*restaurant.price_range))
+            print("Address:", restaurant.address)
+            print("Website:", restaurant.website)
+            print("Phone Number", restaurant.phone_number)
+        return full_list_of_restaurants
 
     elif len(search_cuisine_results) == 0:
         # no results, prompt user to try again, y/n input options
@@ -74,12 +82,21 @@ def get_restaurant_results(user_input, search_cuisine_results):
         # user narrowed down his preferences to one cuisine, thus prompt if the user wants to display all restaurants within this cuisine
         search_confirmation = input("The only option with the beginning letters '{input}' is {cuisine}. Do you want to look at results for {cuisine_title_case}? (y/n) ".format(input = user_input, cuisine = search_cuisine_results[0], cuisine_title_case = (search_cuisine_results[0]).title())).lower()
         # checking if the user enters "y" or "n"
-        while (search_confirmation != "y") or (search_confirmation != "n"):
+        while (search_confirmation != "y") and (search_confirmation != "n"):
             if search_confirmation == "y":
                 print("Searching {cuisine} restaurants in Dublin...".format(cuisine = search_cuisine_results[0].title()))
+                select_restaurants_list = [restaurant for restaurant in full_list_of_restaurants if restaurant.cuisine == search_cuisine_results[0]]
+                for restaurant in select_restaurants_list:
+                    print("\n_____________________\n")
+                    print("Name:", restaurant.name)
+                    print("Rating:", str(restaurant.rating) + "/5 (Of {a} reviews)".format(a = restaurant.review_count))
+                    print("Price Range:", "{b}".format(b = "$"*restaurant.price_range))
+                    print("Address:", restaurant.address)
+                    print("Website:", restaurant.website)
+                    print("Phone Number", restaurant.phone_number)
+                return select_restaurants_list
                 break
-                # COMPLETE THIS LATER: write another function to display results: select restaurants
-
+ 
 
             elif search_confirmation == "n":
                 try_again_helper(user_input, search_cuisine_results)

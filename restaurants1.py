@@ -2,9 +2,9 @@ class Restaurant:
     def __init__(self, name, cuisine, rating, review_count, price_range, website, phone_number, address):
         self.name = name
         self.cuisine = cuisine
-        self.rating = rating
-        self.review_count = review_count
-        self.price_range = price_range 
+        self.rating = rating # out of 5
+        self.review_count = review_count 
+        self.price_range = price_range # out of 4
         self.website = website
         self.phone_number = phone_number
         self.address = address

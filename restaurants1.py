@@ -12,7 +12,7 @@ class Restaurant:
     def __repr__(self):
         return self.name
 
-    def return_recommended_score(self):
+    def get_recommended_score(self):
         self.recommended_score = self.rating * self.review_count 
         return self.recommended_score
 

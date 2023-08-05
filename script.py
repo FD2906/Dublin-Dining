@@ -30,7 +30,15 @@ def try_again_helper():
         if try_again == "y":
             new_user_input = get_user_cuisine_input()
             new_search_cuisine_results = search_cuisines(new_user_input)
-            get_restaurant_results(new_user_input, new_search_cuisine_results)
+            restaurant_results, sort_choice = get_restaurant_results(new_user_input, new_search_cuisine_results)
+            if sort_choice == "x": # no sorting occurs here, user is prompted if he wants to try again
+                try_again_helper()
+            else:
+                # using previous variables, they are passed into the sort_and_display_results argument.
+                while sort_choice != "x":
+                    new_restaurants_list, sort_choice = sort_and_display_results(restaurant_results, sort_choice) # function runs itself in a loop until sort_choice == "x"
+                if sort_choice == "x":
+                    try_again_helper()
             break
         elif try_again == "n":
             print("Goodbye!")
@@ -139,7 +147,7 @@ def get_restaurant_results(user_input, search_cuisine_results):
 
 def sort_and_display_results(restaurant_results, sort_choice):
     # function should be able to sort the results returned from the get_restaurant_results
-    # 4 options for sorting purposes, indicated by r, h, n, p.
+    # 4 options for sorting purposes, indicated by r, h, n, p, e.
     sort_dict = {} # set up a dictionary for sorting purposes
 
 
@@ -206,6 +214,9 @@ def sort_and_display_results(restaurant_results, sort_choice):
         print("\n_____________________\n\nRestaurants sorted by price, from high to low...") # breaks initial results and sorted results
         display_results_helper(new_restaurants_list) # displays results from sort
 
+    new_sort_choice = sort_choice_input_helper() # prompts user again if he wants to sort the results.
+    return new_restaurants_list, new_sort_choice
+
 
 
 
@@ -217,7 +228,7 @@ def sort_and_display_results(restaurant_results, sort_choice):
 display_welcome_message() # displays Welcome to Dublin Dining!
 user_input = get_user_cuisine_input() # Enter below the beginning... gets user input for the following function   
 search_cuisine_results = search_cuisines(user_input) # Searches cuisines, search results should appear in a list []
-restaurant_results, sort_choice = get_restaurant_results(user_input, search_cuisine_results) # Based on the above, the program determines what output appears
+restaurant_results, sort_choice = get_restaurant_results(user_input, search_cuisine_results) # Based on the above, the program determines what output appears, sort choice is also found here.
 
 # testing code below:
 """
@@ -227,9 +238,14 @@ else
     run sort_and_display_results function with restaurant_results and sort_choice passed in as arguments.
 """
 
-if sort_choice == "x":
+
+
+if sort_choice == "x": # no sorting occurs here, user is prompted if he wants to try again
     try_again_helper()
 else:
-    restaurants = sort_and_display_results(restaurant_results, sort_choice) # sorts results
-
+    # using previous variables, they are passed into the sort_and_display_results argument.
+    while sort_choice != "x":
+        restaurant_results, sort_choice = sort_and_display_results(restaurant_results, sort_choice) # function runs itself in a loop until sort_choice == "x", variables are updated 
+    if sort_choice == "x":
+        try_again_helper()
 

@@ -42,7 +42,7 @@ def try_again_helper():
             break
         elif try_again == "n":
             print("Goodbye!")
-            break
+            exit()
         else:
             try_again = input("Invalid response. Please enter either 'y' or 'n': ")
 
@@ -68,7 +68,7 @@ def sort_choice_input_helper(): # helper function to prompt user for type of res
             return sort_choice
         else:
             print("Invalid response.")
-            sort_choice = input(input("Type 'r' to sort by recommended results.\nType 'h' to sort by highest rating.\nType 'n' to sort by number of reviews.\nType 'p' to sort by price (low to high).\nType 'e' to sort by price (high to low).\nType 'x' to exit. ")).lower()
+            sort_choice = (input("Type 'r' to sort by recommended results.\nType 'h' to sort by highest rating.\nType 'n' to sort by number of reviews.\nType 'p' to sort by price (low to high).\nType 'e' to sort by price (high to low).\nType 'x' to exit. ")).lower()
 
 
 
@@ -129,7 +129,7 @@ def get_restaurant_results(user_input, search_cuisine_results):
 
 
             elif search_confirmation == "n": # user declined request to search for specific restaurants
-                try_again_helper(user_input, search_cuisine_results)
+                try_again_helper()
                 break
 
             else: 
@@ -228,17 +228,18 @@ def sort_and_display_results(restaurant_results, sort_choice):
 display_welcome_message() # displays Welcome to Dublin Dining!
 user_input = get_user_cuisine_input() # Enter below the beginning... gets user input for the following function   
 search_cuisine_results = search_cuisines(user_input) # Searches cuisines, search results should appear in a list []
-restaurant_results, sort_choice = get_restaurant_results(user_input, search_cuisine_results) # Based on the above, the program determines what output appears, sort choice is also found here.
 
-# testing code below:
+restaurant_results = [] # declares an empty list to avoid None type unpacking error
+sort_choice = '' # declares an empty string to avoid None type unpacking error
+
+restaurant_results, sort_choice = get_restaurant_results(user_input, search_cuisine_results) # Based on the above, the program determines what output appears, sort choice is also found here.
+# psuedo code for below:
 """
 if sort_choice is "x":
     prompt if user would like to try again
 else
     run sort_and_display_results function with restaurant_results and sort_choice passed in as arguments.
 """
-
-
 
 if sort_choice == "x": # no sorting occurs here, user is prompted if he wants to try again
     try_again_helper()
